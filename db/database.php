@@ -49,6 +49,6 @@ CREATE TABLE IF NOT EXISTS comentarios (
 -- Contraseñas: fabian y ingrid
 -- =====================================================
 INSERT INTO users (nombre, email, password, rol)
-VALUES ('fabian', 'fabian', '$2y$10$5oZzvYAg7D2GhuF0F8o2AeL7k0VrCaSuVTO6YdZ.DG0zXn8rhcfJm', 'admin'),
-       ('ingrid', 'ingrid', '$2y$10$QSkc0FFQ3u2PjN7wI7NdIOE84Dql.3c6uFm7dMTwKo.QrC8PUGs1C', 'admin');
+VALUES ('fabian', '1234', '$2y$10$5oZzvYAg7D2GhuF0F8o2AeL7k0VrCaSuVTO6YdZ.DG0zXn8rhcfJm', 'admin'),
+       ('ingrid', '1234', '$2y$10$QSkc0FFQ3u2PjN7wI7NdIOE84Dql.3c6uFm7dMTwKo.QrC8PUGs1C', 'admin');
 
