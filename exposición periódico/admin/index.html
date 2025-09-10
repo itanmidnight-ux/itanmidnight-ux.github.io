@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Acceso Administrativo - ECO BELÉN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="logo">🌐 ECO BELÉN</div>
+        <h2>Acceso Administrativo</h2>
+      </div>
+      <form action="auth.php" method="POST" class="login-form">
+        <div class="input-group">
+          <input type="text" id="usuario" name="usuario" required>
+          <label for="usuario">Correo o Usuario</label>
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" name="password" required>
+          <label for="password">Contraseña</label>
+        </div>
+        <div class="options">
+          <label><input type="checkbox" name="remember"> Mantener sesión</label>
+          <a href="#">¿Olvidaste tu contraseña?</a>
+        </div>
+        <button type="submit" class="btn-login">Ingresar</button>
+      </form>
+      <div class="extra-links">
+        <p>⚡ Acceso restringido a administradores ⚡</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
