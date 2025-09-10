@@ -1,0 +1,388 @@
+/* Variables CSS para facilitar cambios de tema */
+:root {
+    --primary-color: #4CAF50; /* Verde brillante */
+    --secondary-color: #388E3C; /* Verde oscuro */
+    --accent-color: #FFC107; /* Amarillo para acentos */
+    --text-color: #333;
+    --light-text-color: #f4f4f4;
+    --bg-light: #f4f4f4;
+    --bg-dark: #2c3e50; /* Azul oscuro casi negro */
+    --card-bg: #ffffff;
+    --border-color: #ddd;
+    --shadow-light: 0 4px 8px rgba(0,0,0,0.1);
+    --shadow-medium: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Encabezado Público */
+.public-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--light-text-color);
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: var(--shadow-medium);
+}
+
+.public-header h1 {
+    margin: 0;
+    font-size: 2.8em;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.public-header .slogan {
+    margin: 5px 0 15px;
+    font-size: 1.1em;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.public-header nav a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.public-header nav a:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Contenido Principal con Layout de 3 Columnas */
+.public-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    position: relative; /* Para posicionamiento absoluto de paneles laterales */
+}
+
+/* Sección del Último Periódico */
+.main-periodico-display {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    text-align: center;
+    min-height: 600px; /* Altura mínima para el iframe */
+    display: flex;
+    flex-direction: column;
+}
+
+.main-periodico-display h2 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-top: 0;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.main-periodico-display .card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-light);
+    background-color: #fdfdfd;
+}
+
+.main-periodico-display .card h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.main-periodico-display .pdf-container {
+    flex-grow: 1;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.main-periodico-display iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.btn-view {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-view:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Paneles Laterales (Comentarios y Periódicos Anteriores) */
+.side-panel {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    width: 300px; /* Ancho fijo para los paneles laterales */
+    min-width: 280px;
+    max-height: 80vh; /* Altura máxima */
+    overflow-y: auto; /* Scroll si el contenido es largo */
+    position: sticky; /* Se mantiene al hacer scroll */
+    top: 20px; /* Distancia desde la parte superior */
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    z-index: 100; /* Asegura que estén encima de otros elementos */
+}
+
+.side-panel h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.4em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 15px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-light);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 101; /* Encima del panel */
+}
+
+.toggle-button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Panel de Comentarios (Derecha) */
+.comments-panel {
+    order: 3; /* Asegura que esté a la derecha */
+    margin-left: 20px; /* Ajuste para botón */
+}
+
+.comments-panel .toggle-button {
+    left: -40px; /* Posiciona la flecha a la izquierda del panel */
+}
+
+.comments-panel.hidden {
+    transform: translateX(calc(100% + 20px)); /* Desliza hacia afuera a la derecha */
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Panel de Periódicos Anteriores (Izquierda) */
+.periodicos-panel {
+    order: 1; /* Asegura que esté a la izquierda */
+    margin-right: 20px; /* Ajuste para botón */
+}
+
+.periodicos-panel .toggle-button {
+    right: -40px; /* Posiciona la flecha a la derecha del panel */
+}
+
+.periodicos-panel.hidden {
+    transform: translateX(calc(-100% - 20px)); /* Desliza hacia afuera a la izquierda */
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Estilos de los Comentarios */
+.comment {
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    word-wrap: break-word; /* Asegura que el texto largo se ajuste */
+}
+
+.comment strong {
+    color: var(--secondary-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.comment p {
+    margin: 0 0 5px;
+    font-size: 0.95em;
+}
+
+.comment span {
+    font-size: 0.8em;
+    color: #777;
+}
+
+#commentForm input[type="text"],
+#commentForm textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+#commentForm textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 80px;
+}
+
+#commentForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+#commentForm button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Estilos para la lista de periódicos anteriores */
+.list-item {
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.list-item:hover {
+    background-color: #f0f0f0;
+}
+
+.list-item span {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.list-item strong {
+    color: var(--secondary-color);
+    display: block;
+    font-size: 1.1em;
+}
+
+.list-item a.btn-mini {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: background-color 0.2s ease;
+}
+
+.list-item a.btn-mini:hover {
+    background-color: #e0b431;
+}
+
+/* Mensajes de feedback (p.ej., "No hay comentarios aún") */
+.public-content p {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Estilos específicos para view.php (iframe) */
+.pdf-viewer-page .public-content {
+    flex-direction: row; /* Asegura layout horizontal */
+}
+
+.pdf-viewer-page .main-periodico-display {
+    padding: 20px; /* Ajuste de padding si es necesario */
+}
+
+.pdf-viewer-page .pdf-container {
+    height: 75vh; /* Ocupa más altura en la página del visor */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .public-content {
+        flex-direction: column; /* Apila las columnas */
+        align-items: center;
+    }
+
+    .side-panel {
+        width: 90%; /* Ocupa casi todo el ancho */
+        max-width: 500px; /* Limita el ancho en pantallas medianas */
+        position: relative; /* Ya no es sticky */
+        top: auto;
+        margin: 20px 0;
+        transform: none !important; /* Deshabilita transformaciones para no romper layout */
+        opacity: 1 !important; /* Siempre visible en pantallas pequeñas */
+        pointer-events: auto !important;
+    }
+
+    .toggle-button {
+        display: none; /* Oculta los botones de ocultar/mostrar en móviles */
+    }
+
+    .comments-panel, .periodicos-panel {
+        margin: 20px 0 0 0; /* Ajusta márgenes */
+    }
+}
+
+@media (max-width: 768px) {
+    .public-header h1 {
+        font-size: 2em;
+    }
+    .public-header nav a {
+        margin: 0 10px;
+    }
+    .main-periodico-display {
+        padding: 15px;
+    }
+    .main-periodico-display h2 {
+        font-size: 1.6em;
+    }
+}

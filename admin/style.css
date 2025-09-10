@@ -1,0 +1,162 @@
+/* Estilo base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Fondo futurista */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+
+/* Contenedor centrado */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Tarjeta */
+.login-card {
+  background: #fff;
+  color: #222;
+  border-radius: 16px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0077ff;
+  margin-bottom: 0.3rem;
+}
+
+/* Header */
+.login-header h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c5364;
+}
+
+/* Formulario */
+.login-form {
+  margin-top: 2rem;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  background: transparent;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 0.9rem;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  color: #777;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+/* Animación label flotante */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -0.6rem;
+  left: 0.7rem;
+  font-size: 0.75rem;
+  background: #fff;
+  padding: 0 0.3rem;
+  color: #0077ff;
+}
+
+/* Foco input */
+.input-group input:focus {
+  border-color: #0077ff;
+  box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.2);
+}
+
+/* Opciones */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.options a {
+  color: #0077ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+/* Botón de login */
+.btn-login {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #0077ff, #0055c4);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 119, 255, 0.3);
+}
+
+.btn-login:hover {
+  box-shadow: 0 6px 20px rgba(0, 119, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.extra-links {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.extra-links p {
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
