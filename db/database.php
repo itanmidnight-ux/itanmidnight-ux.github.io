@@ -3,7 +3,7 @@
 -- =====================================================
 
 -- Usamos la base de datos "database" si ya existe
-USE database;
+USE periodico_db;
 
 -- =====================================================
 -- 🧑 Tabla de usuarios (administradores y editores)
