@@ -1,1 +1,12 @@
-<?php                                                         /**                                                            * Archivo de configuración para la conexión a la base de datos MySQLi                                                       */                                                                                                                         // Credenciales de la base de datos                           $servername = "localhost";                                    $username = "admin";                                          $password = "admin";                                          $dbname = "database";                                                                                                       // Crear conexión                                             $conn = new mysqli($servername, $username, $password, $dbname);                                                                                                                           // Verificar la conexión                                      if ($conn->connect_error) {                                       die("❌ Error de conexión: " . $conn->connect_error);     }                                                             ?>
+<?php
+$servername = "localhost";
+$username   = "root";     // usuario por defecto en XAMPP
+$password   = "";         // sin contrase帽a
+$dbname     = "database"; // nombre de la base que creaste
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("鉂� Error de conexi贸n: " . $conn->connect_error);
+}
+?>
